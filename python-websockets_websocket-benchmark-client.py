@@ -82,14 +82,17 @@ class Server:
         # send newly connected client initial timestamp
         await self.notify(websocket, 0)
 
-        # incoming message event
-        async for message in websocket:
+        try:
+            # incoming message event
+            async for message in websocket:
 
-            # decode incoming message into an associative array
-            data = json.loads(message)
+                # decode incoming message into an associative array
+                data = json.loads(message)
 
-            # notify client with event for message with count "c"
-            await self.notify(websocket, data["c"])
+                # notify client with event for message with count "c"
+                await self.notify(websocket, data["c"])
+        except asyncio.IncompleteReadError:
+            pass
 
 
 """ Create an instance of the websocket server and start it """
