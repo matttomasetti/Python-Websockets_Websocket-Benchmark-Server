@@ -20,4 +20,4 @@ RUN cd /home/websocket \
 EXPOSE 8080
 
 WORKDIR /home/websocket
-CMD ["python3", "python-websockets_websocket-benchmark-client.py"]
+CMD ["python3", "python-websockets_websocket-benchmark-server.py"]

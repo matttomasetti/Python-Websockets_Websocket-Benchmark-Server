@@ -33,7 +33,7 @@ included Dockerfile
 #### Install & Run
 ```
 pip3 install -r requirements.txt
-python3 python-websockets_websocket-benchmark-client.py
+python3 python-websockets_websocket-benchmark-server.py
 ```
 
 ## Links
